@@ -1,0 +1,158 @@
+---
+
+---
+
+<section
+    class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
+>
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-5">
+        <div
+            class="absolute top-20 left-10 w-64 h-64 rounded-full blur-3xl"
+            style="background-color: var(--accent);"
+        >
+        </div>
+        <div
+            class="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl"
+            style="background-color: var(--accent);"
+        >
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <!-- Main Headline -->
+        <div class="mb-8">
+            <h1
+                class="font-bold mb-4 theme-professional:text-7xl theme-pixel:text-4xl theme-pixel:leading-tight"
+            >
+                Construyo sistemas que <span class="gradient-text"
+                    >funcionan</span
+                >
+            </h1>
+            <p
+                class="theme-professional:text-xl theme-pixel:text-sm max-w-2xl mx-auto"
+                style="color: var(--secondary)"
+            >
+                Frontend que se siente bien • Backend que escala •
+                Automatización que ahorra horas
+            </p>
+        </div>
+
+        <!-- Quick Intro -->
+        <div
+            class="mb-12 theme-professional:text-lg theme-pixel:text-xs max-w-2xl mx-auto"
+            style="color: var(--secondary)"
+        >
+            <p>
+                Desarrollador full-stack especializado en ETL, automatización y
+                aplicaciones web. De React a Python, de SQL a SAP - si hay
+                código que escribir, lo escribo bien.
+            </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+            <a
+                href="#projects"
+                class="px-8 py-4 rounded-lg font-medium transition-all hover:scale-105 hover:shadow-lg theme-professional:text-base theme-pixel:text-xs w-full sm:w-auto"
+                style="background-color: var(--accent); color: var(--bg);"
+            >
+                Ver Proyectos →
+            </a>
+            <a
+                href="#contact"
+                class="px-8 py-4 rounded-lg font-medium border-2 transition-all hover:scale-105 w-full sm:w-auto theme-professional:text-base theme-pixel:text-xs"
+                style="border-color: var(--border); color: var(--text);"
+            >
+                Hablemos
+            </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div class="text-center">
+                <div
+                    class="theme-professional:text-3xl theme-pixel:text-xl font-bold mb-2"
+                    style="color: var(--accent);"
+                >
+                    3+
+                </div>
+                <div
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--secondary);"
+                >
+                    Años Programando
+                </div>
+            </div>
+            <div class="text-center">
+                <div
+                    class="theme-professional:text-3xl theme-pixel:text-xl font-bold mb-2"
+                    style="color: var(--accent);"
+                >
+                    10+
+                </div>
+                <div
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--secondary);"
+                >
+                    Proyectos Completados
+                </div>
+            </div>
+            <div class="text-center">
+                <div
+                    class="theme-professional:text-3xl theme-pixel:text-xl font-bold mb-2"
+                    style="color: var(--accent);"
+                >
+                    ∞
+                </div>
+                <div
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--secondary);"
+                >
+                    Problemas Resueltos
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+    >
+        <div
+            class="w-6 h-10 border-2 rounded-full flex items-start justify-center p-2"
+            style="border-color: var(--border);"
+        >
+            <div
+                class="w-1 h-3 rounded-full"
+                style="background-color: var(--accent);"
+            >
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .gradient-text {
+        background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-bounce {
+        animation: bounce 2s infinite;
+    }
+</style>
