@@ -1,0 +1,131 @@
+---
+// Experience - Mini timeline
+const experiences = [
+  {
+    role: "Software Developer",
+    company: "Sucro",
+    period: "2023 - Presente",
+    location: "Colombia",
+    description: "Desarrollo de procesos ETL automatizados desde SAP a SQL Server. Optimización de queries y pipelines de datos.",
+    achievements: [
+      "Reducción de 4 horas a 15 minutos en procesos de extracción",
+      "Implementación de validación automática de datos",
+      "Zero errores manuales en producción"
+    ],
+    type: "work"
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Freelance / Proyectos Propios",
+    period: "2022 - Presente",
+    location: "Remoto",
+    description: "Desarrollo de aplicaciones web y móviles. Automatización de procesos empresariales.",
+    achievements: [
+      "Fast Training - App de entrenamiento deportivo",
+      "Sistema de gestión para panadería familiar",
+      "Múltiples scripts de automatización Python"
+    ],
+    type: "freelance"
+  },
+  {
+    role: "Tecnólogo ADSO",
+    company: "SENA",
+    period: "2021 - 2023",
+    location: "Colombia",
+    description: "Análisis y Desarrollo de Software. Formación técnica integral en desarrollo full-stack.",
+    achievements: [
+      "Certificación en desarrollo web",
+      "Proyectos prácticos en React y Python",
+      "Participación en SENASoft 2025"
+    ],
+    type: "education"
+  }
+];
+---
+
+<section id="experience" class="py-24 px-6" style="background-color: var(--surface);">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="mb-16 text-center">
+      <h2 class="theme-professional:text-5xl theme-pixel:text-3xl font-bold mb-4">
+        Experiencia
+      </h2>
+      <p class="theme-professional:text-lg theme-pixel:text-xs max-w-2xl mx-auto mb-4" style="color: var(--secondary);">
+        Mi trayectoria en el desarrollo de software
+      </p>
+      <div class="w-20 h-1 mx-auto" style="background-color: var(--accent);"></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-8 top-0 bottom-0 w-0.5" style="background-color: var(--border);"></div>
+
+      <!-- Experience items -->
+      <div class="space-y-12">
+        {experiences.map((exp) => (
+          <article class="relative pl-20">
+            <!-- Timeline dot -->
+            <div
+              class="absolute left-5 top-2 w-6 h-6 rounded-full border-4 z-10"
+              style={`background-color: var(--bg); border-color: ${exp.type === 'work' ? 'var(--accent)' : exp.type === 'freelance' ? '#10b981' : '#f59e0b'};`}
+            ></div>
+
+            <!-- Content card -->
+            <div class="p-6 rounded-lg border-2 hover:scale-105 transition-all" style="background-color: var(--bg); border-color: var(--border);">
+              <!-- Header -->
+              <div class="mb-4">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                  <h3 class="theme-professional:text-2xl theme-pixel:text-lg font-bold">
+                    {exp.role}
+                  </h3>
+                  <span
+                    class="px-3 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px] font-medium"
+                    style={`background-color: ${exp.type === 'work' ? 'var(--accent)' : exp.type === 'freelance' ? '#10b981' : '#f59e0b'}; color: var(--bg);`}
+                  >
+                    {exp.type === 'work' ? '💼 Trabajo' : exp.type === 'freelance' ? '🚀 Freelance' : '🎓 Educación'}
+                  </span>
+                </div>
+                <div class="flex flex-wrap gap-4 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--secondary);">
+                  <span class="font-medium" style="color: var(--accent);">{exp.company}</span>
+                  <span>📅 {exp.period}</span>
+                  <span>📍 {exp.location}</span>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="theme-professional:text-base theme-pixel:text-xs mb-4" style="color: var(--text);">
+                {exp.description}
+              </p>
+
+              <!-- Achievements -->
+              <div>
+                <h4 class="theme-professional:text-sm theme-pixel:text-xs font-bold mb-2" style="color: var(--accent);">
+                  Logros destacados:
+                </h4>
+                <ul class="space-y-1 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--text);">
+                  {exp.achievements.map((achievement) => (
+                    <li class="flex items-start">
+                      <span class="mr-2" style="color: var(--accent);">▸</span>
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .space-y-1 > * + * {
+    margin-top: 0.25rem;
+  }
+
+  .space-y-12 > * + * {
+    margin-top: 3rem;
+  }
+</style>
