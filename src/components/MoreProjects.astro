@@ -1,0 +1,184 @@
+---
+// More Projects - Grid con filtros
+const projects = [
+  {
+    title: "Plataforma de Transparencia Política",
+    description: "Datos abiertos de gobierno colombiano organizados y accesibles",
+    tags: ["Frontend", "Data"],
+    tech: ["React", "Next.js", "APIs"],
+    icon: "🏛️",
+    status: "Planeando"
+  },
+  {
+    title: "Portfolio Personal",
+    description: "Este mismo sitio - dos temas visuales únicos",
+    tags: ["Frontend"],
+    tech: ["Astro", "Tailwind", "TypeScript"],
+    icon: "💼",
+    status: "En Desarrollo"
+  },
+  {
+    title: "Python Automation Scripts",
+    description: "Colección de scripts para automatizar tareas repetitivas",
+    tags: ["Automation"],
+    tech: ["Python", "Bash", "Cron"],
+    icon: "🐍",
+    status: "Activo"
+  },
+  {
+    title: "API REST Template",
+    description: "Starter template con auth, logging y buenas prácticas",
+    tags: ["Backend"],
+    tech: ["Node.js", "Express", "PostgreSQL"],
+    icon: "🔌",
+    status: "Completado"
+  },
+  {
+    title: "Data Analysis Notebooks",
+    description: "Análisis de datos y visualizaciones en Jupyter",
+    tags: ["Data"],
+    tech: ["Python", "Pandas", "Matplotlib"],
+    icon: "📊",
+    status: "Activo"
+  },
+  {
+    title: "Component Library",
+    description: "Componentes React reutilizables con Storybook",
+    tags: ["Frontend"],
+    tech: ["React", "Storybook", "CSS"],
+    icon: "🧩",
+    status: "En Desarrollo"
+  }
+];
+---
+
+<section id="more-projects" class="py-24 px-6" style="background-color: var(--surface);">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="mb-12 text-center">
+      <h2 class="theme-professional:text-5xl theme-pixel:text-3xl font-bold mb-4">
+        Más Proyectos
+      </h2>
+      <p class="theme-professional:text-lg theme-pixel:text-xs max-w-2xl mx-auto mb-4" style="color: var(--secondary);">
+        Otros proyectos en los que he trabajado o estoy trabajando
+      </p>
+      <div class="w-20 h-1 mx-auto" style="background-color: var(--accent);"></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap gap-3 justify-center mb-12">
+      <button data-filter="all" class="filter-btn active px-6 py-2 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs">
+        All
+      </button>
+      <button data-filter="Frontend" class="filter-btn px-6 py-2 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs">
+        Frontend
+      </button>
+      <button data-filter="Backend" class="filter-btn px-6 py-2 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs">
+        Backend
+      </button>
+      <button data-filter="Data" class="filter-btn px-6 py-2 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs">
+        Data
+      </button>
+      <button data-filter="Automation" class="filter-btn px-6 py-2 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs">
+        Automation
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+      {projects.map((project) => (
+        <article
+          class="project-card p-6 rounded-lg border-2 hover:scale-105 transition-all duration-300"
+          data-tags={project.tags.join(',')}
+          style="background-color: var(--bg); border-color: var(--border);"
+        >
+          <!-- Icon & Status -->
+          <div class="flex justify-between items-start mb-4">
+            <span class="text-4xl">{project.icon}</span>
+            <span class="px-2 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px]" style="background-color: var(--surface); color: var(--secondary);">
+              {project.status}
+            </span>
+          </div>
+
+          <!-- Title & Description -->
+          <h3 class="theme-professional:text-xl theme-pixel:text-sm font-bold mb-2">
+            {project.title}
+          </h3>
+          <p class="theme-professional:text-sm theme-pixel:text-xs mb-4" style="color: var(--secondary);">
+            {project.description}
+          </p>
+
+          <!-- Tech Stack -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((tech) => (
+              <span class="px-2 py-1 rounded theme-professional:text-xs theme-pixel:text-[10px]" style="background-color: var(--surface); color: var(--text);">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="px-2 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px] font-medium" style="border: 1px solid var(--accent); color: var(--accent);">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .filter-btn {
+    background-color: var(--bg);
+    border: 2px solid var(--border);
+    color: var(--text);
+  }
+
+  .filter-btn.active {
+    background-color: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+
+  .project-card {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .project-card.hidden {
+    display: none;
+  }
+</style>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter') as string;
+
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter projects
+        projectCards.forEach(card => {
+          const tags = card.getAttribute('data-tags')?.split(',') || [];
+
+          if (filter === 'all' || tags.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>
