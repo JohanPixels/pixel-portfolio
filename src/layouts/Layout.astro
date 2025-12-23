@@ -1,0 +1,118 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="theme-professional">
+        <!-- Theme Toggle Button -->
+        <button
+            id="theme-toggle"
+            class="fixed top-6 right-6 z-50 px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105 border-2"
+        >
+            <span class="professional-label font-sans text-sm font-medium"
+                >🦀</span
+            >
+            <span class="pixel-label font-mono text-xs hidden">🪼</span>
+        </button>
+
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    .theme-professional {
+        --bg: #ffffff;
+        --surface: #f8f9fa;
+        --text: #1a1a1a;
+        --secondary: #6b7280;
+        --accent: #2563eb;
+        --border: #e5e7eb;
+    }
+
+    .theme-pixel {
+        --bg: #1a1c2e;
+        --surface: #2a2d4a;
+        --text: #f0f0f0;
+        --secondary: #94a3b8;
+        --accent: #00ff9f;
+        --border: #3f4463;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+        transition: all 0.3s ease;
+    }
+    .theme-pixel {
+        font-family: "Press Start 2P", monospace;
+    }
+
+    .theme-professional {
+        font-family: "Inter", system-ui, sans-serif;
+    }
+
+    .theme-professional .pixel-label {
+        display: none;
+    }
+
+    .theme-professional .professional-label {
+        display: inline;
+    }
+
+    .theme-pixel .pixel-label {
+        display: inline;
+    }
+
+    .theme-pixel .professional-label {
+        display: none;
+    }
+
+    #theme-toggle {
+        background-color: var(--surface);
+        border-color: var(--border);
+        color: var(--text);
+    }
+</style>
+
+<script>
+    const getTheme = (): string => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("visual-theme")
+        ) {
+            return localStorage.getItem("visual-theme") as string;
+        }
+        return "professional";
+    };
+
+    const setTheme = (theme: string) => {
+        document.body.className = `theme-${theme}`;
+        localStorage.setItem("visual-theme", theme);
+    };
+
+    setTheme(getTheme());
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("theme-toggle");
+        toggle?.addEventListener("click", () => {
+            const current = getTheme();
+            const newTheme =
+                current === "professional" ? "pixel" : "professional";
+            setTheme(newTheme);
+        });
+    });
+</script>
