@@ -1,0 +1,218 @@
+---
+// Contact - English
+// TODO: Replace with your real links!
+---
+
+<section id="contact" class="py-24 px-6 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-5">
+        <div
+            class="absolute top-10 right-10 w-96 h-96 rounded-full blur-3xl"
+            style="background-color: var(--accent);"
+        >
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+        <!-- Section Header -->
+        <div class="mb-16 text-center">
+            <h2
+                class="theme-professional:text-5xl theme-pixel:text-3xl font-bold mb-4"
+            >
+                Let's Talk
+            </h2>
+            <p
+                class="theme-professional:text-xl theme-pixel:text-sm max-w-2xl mx-auto"
+                style="color: var(--secondary);"
+            >
+                Have a project in mind? Looking for a developer? Just want to
+                chat about code?
+            </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Email - TODO: Replace with your email -->
+            <a
+                href="mailto:johan.munozt@gmail.com"
+                class="p-6 rounded-lg border-2 hover:scale-105 transition-all text-center group"
+                style="background-color: var(--surface); border-color: var(--border);"
+            >
+                <div class="text-4xl mb-3">📧</div>
+                <h3
+                    class="theme-professional:text-lg theme-pixel:text-sm font-bold mb-2"
+                >
+                    Email
+                </h3>
+                <p
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--accent);"
+                >
+                    johan.munozt@gmail.com
+                </p>
+            </a>
+
+            <!-- GitHub - TODO: Replace with your GitHub -->
+            <a
+                href="https://github.com/JohanPixels"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-6 rounded-lg border-2 hover:scale-105 transition-all text-center group"
+                style="background-color: var(--surface); border-color: var(--border);"
+            >
+                <div class="text-4xl mb-3">🐙</div>
+                <h3
+                    class="theme-professional:text-lg theme-pixel:text-sm font-bold mb-2"
+                >
+                    GitHub
+                </h3>
+                <p
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--accent);"
+                >
+                    @JohanPixels
+                </p>
+            </a>
+
+            <!-- LinkedIn - TODO: Replace with your LinkedIn -->
+            <a
+                href="https://www.linkedin.com/in/johan-david-mu%C3%B1oz-b5332b341/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-6 rounded-lg border-2 hover:scale-105 transition-all text-center group"
+                style="background-color: var(--surface); border-color: var(--border);"
+            >
+                <div class="text-4xl mb-3">💼</div>
+                <h3
+                    class="theme-professional:text-lg theme-pixel:text-sm font-bold mb-2"
+                >
+                    LinkedIn
+                </h3>
+                <p
+                    class="theme-professional:text-sm theme-pixel:text-xs"
+                    style="color: var(--accent);"
+                >
+                    Johan David Muñoz
+                </p>
+            </a>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mb-12">
+            <a
+                href="mailto:your.email@example.com"
+                class="inline-block px-8 py-4 rounded-lg font-bold transition-all hover:scale-105 hover:shadow-xl theme-professional:text-lg theme-pixel:text-sm"
+                style="background-color: var(--accent); color: var(--bg);"
+            >
+                Send me a message →
+            </a>
+        </div>
+
+        <!-- Easter Egg - Only visible in pixel mode -->
+        <div
+            id="easter-egg"
+            class="hidden text-center p-8 rounded-lg border-2"
+            style="background-color: var(--surface); border-color: var(--accent);"
+        >
+            <div class="mb-4">
+                <span class="text-6xl animate-bounce inline-block">🎮</span>
+            </div>
+            <p
+                class="theme-pixel:text-sm font-bold mb-2"
+                style="color: var(--accent);"
+            >
+                KONAMI CODE UNLOCKED!
+            </p>
+            <p class="theme-pixel:text-xs mb-4" style="color: var(--text);">
+                ↑ ↑ ↓ ↓ ← → ← → B A
+            </p>
+            <p class="theme-pixel:text-xs" style="color: var(--secondary);">
+                If you found this, you're definitely my kind of person. Let's
+                talk about code and retro games.
+            </p>
+        </div>
+
+        <!-- Pixel Art Hint (only in pixel mode) -->
+        <div
+            class="pixel-hint hidden mt-8 text-center theme-pixel:text-xs"
+            style="color: var(--secondary);"
+        >
+            <p>Pssst... try pressing: ↑ ↑ ↓ ↓ ← → ← → B A</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 px-6 border-t-2" style="border-color: var(--border);">
+    <div
+        class="max-w-6xl mx-auto text-center theme-professional:text-sm theme-pixel:text-xs"
+        style="color: var(--secondary);"
+    >
+        <p>Made with ❤️ and code in Astro + Tailwind</p>
+        <p class="mt-2">© 2025 Johan David Muñoz. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    .animate-bounce {
+        animation: bounce 1s infinite;
+    }
+
+    /* Only show hint in pixel mode */
+    .theme-pixel .pixel-hint {
+        display: block;
+    }
+</style>
+
+<script>
+    // Konami Code Easter Egg
+    const konamiCode = [
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowLeft",
+        "ArrowRight",
+        "b",
+        "a",
+    ];
+    let konamiIndex = 0;
+
+    document.addEventListener("keydown", (e) => {
+        const key = e.key.toLowerCase();
+
+        if (
+            key === konamiCode[konamiIndex].toLowerCase() ||
+            e.key === konamiCode[konamiIndex]
+        ) {
+            konamiIndex++;
+
+            if (konamiIndex === konamiCode.length) {
+                // Easter egg activated!
+                const easterEgg = document.getElementById("easter-egg");
+                if (easterEgg) {
+                    easterEgg.classList.remove("hidden");
+                    easterEgg.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                    });
+                }
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    });
+</script>

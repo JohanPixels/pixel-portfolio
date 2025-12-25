@@ -1,42 +1,55 @@
 ---
-// Experience - Mini timeline
+// Experience - English (DATES CORRECTED)
 const experiences = [
   {
     role: "Software Developer",
     company: "Sucro",
-    period: "2023 - Presente",
+    period: "May 2024 - November 2024 · 7 months",
     location: "Colombia",
-    description: "Desarrollo de procesos ETL automatizados desde SAP a SQL Server. Optimización de queries y pipelines de datos.",
+    description: "Developed automated ETL processes from SAP to SQL Server. Database query optimization and data pipeline development.",
     achievements: [
-      "Reducción de 4 horas a 15 minutos en procesos de extracción",
-      "Implementación de validación automática de datos",
-      "Zero errores manuales en producción"
+      "Built ETL system designed to reduce 4 hours to 12 minutes of extraction time",
+      "Implemented automatic data validation",
+      "Delivered production-ready code with comprehensive documentation"
     ],
     type: "work"
   },
   {
     role: "Full Stack Developer",
-    company: "Freelance / Proyectos Propios",
-    period: "2022 - Presente",
-    location: "Remoto",
-    description: "Desarrollo de aplicaciones web y móviles. Automatización de procesos empresariales.",
+    company: "Freelance / Personal Projects",
+    period: "2022 - Present",
+    location: "Remote",
+    description: "Web and mobile application development. Business process automation.",
     achievements: [
-      "Fast Training - App de entrenamiento deportivo",
-      "Sistema de gestión para panadería familiar",
-      "Múltiples scripts de automatización Python"
+      "Fast Training - Sports training mobile app",
+      "Bakery management system for family business",
+      "Multiple Python automation scripts"
     ],
     type: "freelance"
   },
   {
-    role: "Tecnólogo ADSO",
+    role: "Software Development Technology Program",
     company: "SENA",
     period: "2021 - 2023",
     location: "Colombia",
-    description: "Análisis y Desarrollo de Software. Formación técnica integral en desarrollo full-stack.",
+    description: "Analysis and Software Development. Comprehensive technical training in full-stack development.",
     achievements: [
-      "Certificación en desarrollo web",
-      "Proyectos prácticos en React y Python",
-      "Participación en SENASoft 2025"
+      "Web development certification",
+      "Practical projects in React and Python",
+      "SENASoft 2025 participant"
+    ],
+    type: "education"
+  },
+  {
+    role: "Web Development Certification",
+    company: "Universidad de Caldas",
+    period: "2022 · 800 hours",
+    location: "Colombia",
+    description: "Intensive program focused on web application development as part of Colombia's MinTIC digital transformation initiative.",
+    achievements: [
+      "Web development fundamentals and architecture",
+      "Full-stack development practices",
+      "Modern web technologies"
     ],
     type: "education"
   }
@@ -48,10 +61,10 @@ const experiences = [
     <!-- Section Header -->
     <div class="mb-16 text-center">
       <h2 class="theme-professional:text-5xl theme-pixel:text-3xl font-bold mb-4">
-        Experiencia
+        Experience
       </h2>
       <p class="theme-professional:text-lg theme-pixel:text-xs max-w-2xl mx-auto mb-4" style="color: var(--secondary);">
-        Mi trayectoria en el desarrollo de software
+        My journey in software development
       </p>
       <div class="w-20 h-1 mx-auto" style="background-color: var(--accent);"></div>
     </div>
@@ -83,7 +96,7 @@ const experiences = [
                     class="px-3 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px] font-medium"
                     style={`background-color: ${exp.type === 'work' ? 'var(--accent)' : exp.type === 'freelance' ? '#10b981' : '#f59e0b'}; color: var(--bg);`}
                   >
-                    {exp.type === 'work' ? '💼 Trabajo' : exp.type === 'freelance' ? '🚀 Freelance' : '🎓 Educación'}
+                    {exp.type === 'work' ? '💼 Work' : exp.type === 'freelance' ? '🚀 Freelance' : '🎓 Education'}
                   </span>
                 </div>
                 <div class="flex flex-wrap gap-4 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--secondary);">
@@ -101,7 +114,7 @@ const experiences = [
               <!-- Achievements -->
               <div>
                 <h4 class="theme-professional:text-sm theme-pixel:text-xs font-bold mb-2" style="color: var(--accent);">
-                  Logros destacados:
+                  Key Achievements:
                 </h4>
                 <ul class="space-y-1 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--text);">
                   {exp.achievements.map((achievement) => (
