@@ -1,5 +1,6 @@
 ---
 import { Briefcase, Rocket, GraduationCap, Calendar, MapPin, Trophy, CheckCircle } from '@lucide/astro';
+import { getTechIcon } from '../utils/icons.ts';
 
 // Experience - English (DATES CORRECTED)
 const experiences = [
@@ -61,30 +62,6 @@ const experiences = [
   }
 ];
 
-// Helper para obtener iconos de tecnologías
-const getTechIcon = (tech) => {
-  const icons = {
-    'Python': 'simple-icons:python',
-    'SQL Server': 'simple-icons:microsoftsqlserver',
-    'SAP': 'simple-icons:sap',
-    'pandas': 'simple-icons:pandas',
-    'React': 'simple-icons:react',
-    'Node.js': 'simple-icons:nodedotjs',
-    'Flutter': 'simple-icons:flutter',
-    'Firebase': 'simple-icons:firebase',
-    'PostgreSQL': 'simple-icons:postgresql',
-    'MongoDB': 'simple-icons:mongodb',
-    'Next.js': 'simple-icons:nextdotjs',
-    'Javascript': 'simple-icons:javascript',
-    'SQL': 'simple-icons:mysql',
-    'HTML': 'simple-icons:html5',
-    'CSS': 'simple-icons:css3',
-    'JavaScript': 'simple-icons:javascript',
-    'PHP': 'simple-icons:php',
-    'MySQL': 'simple-icons:mysql'
-  };
-  return icons[tech] || 'mdi:code-tags';
-};
 ---
 
 <section id="experience" class="py-24 px-6" style="background-color: var(--surface);">
