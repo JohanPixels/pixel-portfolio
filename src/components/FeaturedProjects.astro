@@ -1,21 +1,6 @@
 ---
 import { Target, Lightbulb, TrendingUp, Rocket } from "@lucide/astro";
-
-// Helper para obtener iconos de tecnologías
-const getTechIcon = (tech) => {
-    const icons = {
-        Python: "simple-icons:python",
-        "SAP GUI": "simple-icons:sap",
-        "SQL Server": "simple-icons:microsoftsqlserver",
-        "Windows COM": "mdi:microsoft-windows",
-        Pandas: "simple-icons:pandas",
-        React: "simple-icons:react",
-        "Next.js": "simple-icons:nextdotjs",
-        Tailwind: "simple-icons:tailwindcss",
-        localStorage: "mdi:database",
-    };
-    return icons[tech] || "mdi:code-tags";
-};
+import { getTechIcon } from "../utils/icons.ts";
 ---
 
 <section id="projects" class="py-24 px-6">
