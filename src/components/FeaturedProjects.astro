@@ -1,5 +1,21 @@
 ---
-import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
+import { Target, Lightbulb, TrendingUp, Rocket } from "@lucide/astro";
+
+// Helper para obtener iconos de tecnologías
+const getTechIcon = (tech) => {
+    const icons = {
+        Python: "simple-icons:python",
+        "SAP GUI": "simple-icons:sap",
+        "SQL Server": "simple-icons:microsoftsqlserver",
+        "Windows COM": "mdi:microsoft-windows",
+        Pandas: "simple-icons:pandas",
+        React: "simple-icons:react",
+        "Next.js": "simple-icons:nextdotjs",
+        Tailwind: "simple-icons:tailwindcss",
+        localStorage: "mdi:database",
+    };
+    return icons[tech] || "mdi:code-tags";
+};
 ---
 
 <section id="projects" class="py-24 px-6">
@@ -27,28 +43,39 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
         <!-- Projects -->
         <div class="space-y-24">
-            <!-- PROJECT 1: SAP ETL Automation (FIRST - Most Important) -->
-            <article class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- PROJECT 1: SAP ETL Automation -->
+            <article class="grid md:grid-cols-2 gap-12 items-center group">
                 <!-- Image/Demo -->
                 <div class="order-2 md:order-1">
                     <div
-                        class="aspect-video rounded-lg border-2 flex items-center justify-center"
-                        style="background-color: var(--surface); border-color: var(--border);"
+                        class="aspect-video rounded-lg border-2 flex flex-col items-center justify-center gap-4 transition-all group-hover:scale-105 group-hover:border-accent"
+                        style="background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%); border-color: var(--border);"
                     >
+                        <iconify-icon
+                            icon="mdi:database-sync"
+                            width="80"
+                            height="80"
+                            style="color: var(--accent);"></iconify-icon>
                         <span
-                            class="theme-professional:text-6xl theme-pixel:text-4xl"
-                            >🔄</span
+                            class="theme-professional:text-base theme-pixel:text-xs font-medium"
+                            style="color: var(--secondary);"
                         >
+                            ETL Data Pipeline
+                        </span>
                     </div>
                 </div>
 
                 <!-- Content -->
                 <div class="order-1 md:order-2">
                     <div
-                        class="inline-block px-3 py-1 rounded-full mb-4 theme-professional:text-sm theme-pixel:text-xs font-medium"
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 theme-professional:text-sm theme-pixel:text-xs font-medium"
                         style="background-color: #10b981; color: var(--bg);"
                     >
-                        Production-Ready @ Sucro
+                        <iconify-icon
+                            icon="mdi:check-circle"
+                            width="16"
+                            height="16"></iconify-icon>
+                        Production-Ready @ Sucroal
                     </div>
                     <h3
                         class="theme-professional:text-3xl theme-pixel:text-xl font-bold mb-4"
@@ -61,9 +88,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
                     >
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Target />
+                                <Target size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Problem
@@ -78,9 +105,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Lightbulb />
+                                <Lightbulb size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Solution
@@ -97,9 +124,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <ChartLine />
+                                <TrendingUp size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Impact
@@ -115,49 +142,47 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Rocket />
+                                <Rocket size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Tech Stack
                                 </h4>
                             </div>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >Python</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >SAP GUI</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >SQL Server</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >Windows COM</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >Pandas</span
-                                >
+                                {
+                                    [
+                                        "Python",
+                                        "SAP GUI",
+                                        "SQL Server",
+                                        "Windows COM",
+                                        "Pandas",
+                                    ].map((tech) => (
+                                        <span
+                                            class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs flex items-center gap-1.5"
+                                            style="background-color: var(--surface); color: var(--text); border: 1px solid var(--border);"
+                                        >
+                                            <iconify-icon
+                                                icon={getTechIcon(tech)}
+                                                width="16"
+                                                height="16"
+                                            />
+                                            {tech}
+                                        </span>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
 
                     <div class="flex gap-4 mt-6">
                         <span
-                            class="px-6 py-3 rounded-lg font-medium theme-professional:text-sm theme-pixel:text-xs"
+                            class="px-6 py-3 rounded-lg font-medium theme-professional:text-sm theme-pixel:text-xs flex items-center gap-2"
                             style="background-color: var(--surface); color: var(--secondary); border: 2px solid var(--border);"
                         >
+                            <iconify-icon icon="mdi:lock" width="18" height="18"
+                            ></iconify-icon>
                             Proprietary Code - Details Available in Interviews
                         </span>
                     </div>
@@ -165,13 +190,17 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
             </article>
 
             <!-- PROJECT 2: Bakery Management System -->
-            <article class="grid md:grid-cols-2 gap-12 items-center">
+            <article class="grid md:grid-cols-2 gap-12 items-center group">
                 <!-- Content -->
                 <div>
                     <div
-                        class="inline-block px-3 py-1 rounded-full mb-4 theme-professional:text-sm theme-pixel:text-xs font-medium"
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 theme-professional:text-sm theme-pixel:text-xs font-medium"
                         style="background-color: var(--accent); color: var(--bg);"
                     >
+                        <iconify-icon
+                            icon="mdi:hammer-wrench"
+                            width="16"
+                            height="16"></iconify-icon>
                         In Development
                     </div>
                     <h3
@@ -185,9 +214,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
                     >
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Target />
+                                <Target size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Problem
@@ -202,9 +231,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Lightbulb />
+                                <Lightbulb size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Solution
@@ -220,9 +249,9 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <ChartLine />
+                                <TrendingUp size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Impact
@@ -236,71 +265,84 @@ import { Target, Lightbulb, ChartLine, Rocket } from "@lucide/astro";
 
                         <div>
                             <div class="flex items-center gap-2 mb-2">
-                                <Rocket />
+                                <Rocket size={20} />
                                 <h4
-                                    class="font-bold mb-2"
+                                    class="font-bold"
                                     style="color: var(--accent);"
                                 >
                                     Tech Stack
                                 </h4>
                             </div>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >React</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >Next.js</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >Tailwind</span
-                                >
-                                <span
-                                    class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs"
-                                    style="background-color: var(--surface); color: var(--text);"
-                                    >localStorage</span
-                                >
+                                {
+                                    [
+                                        "React",
+                                        "Next.js",
+                                        "Tailwind",
+                                        "localStorage",
+                                    ].map((tech) => (
+                                        <span
+                                            class="px-3 py-1 rounded-full theme-professional:text-sm theme-pixel:text-xs flex items-center gap-1.5"
+                                            style="background-color: var(--surface); color: var(--text); border: 1px solid var(--border);"
+                                        >
+                                            <iconify-icon
+                                                icon={getTechIcon(tech)}
+                                                width="16"
+                                                height="16"
+                                            />
+                                            {tech}
+                                        </span>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
 
                     <div class="flex gap-4 mt-6">
-                        <a
-                            href="#"
-                            class="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs"
+                        <button
+                            disabled
+                            class="px-6 py-3 rounded-lg font-medium transition-all theme-professional:text-sm theme-pixel:text-xs flex items-center gap-2 opacity-50 cursor-not-allowed"
                             style="background-color: var(--accent); color: var(--bg);"
                         >
-                            View Demo →
-                        </a>
-                        <a
-                            href="#"
-                            class="px-6 py-3 rounded-lg font-medium border-2 transition-all hover:scale-105 theme-professional:text-sm theme-pixel:text-xs"
-                            style="border-color: var(--border); color: var(--text);"
+                            <iconify-icon
+                                icon="mdi:rocket-launch"
+                                width="18"
+                                height="18"></iconify-icon>
+                            Demo Coming Soon
+                        </button>
+                        <span
+                            class="px-6 py-3 rounded-lg font-medium border-2 theme-professional:text-sm theme-pixel:text-xs flex items-center gap-2"
+                            style="border-color: var(--border); color: var(--secondary);"
                         >
-                            GitHub →
-                        </a>
+                            <iconify-icon icon="mdi:lock" width="18" height="18"
+                            ></iconify-icon>
+                            Private Repository
+                        </span>
                     </div>
                 </div>
 
                 <!-- Image/Demo -->
                 <div>
                     <div
-                        class="aspect-video rounded-lg border-2 flex items-center justify-center"
-                        style="background-color: var(--surface); border-color: var(--border);"
+                        class="aspect-video rounded-lg border-2 flex flex-col items-center justify-center gap-4 transition-all group-hover:scale-105 group-hover:border-accent"
+                        style="background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%); border-color: var(--border);"
                     >
+                        <iconify-icon
+                            icon="mdi:bread-slice"
+                            width="80"
+                            height="80"
+                            style="color: var(--accent);"></iconify-icon>
                         <span
-                            class="theme-professional:text-6xl theme-pixel:text-4xl"
-                            >🍞</span
+                            class="theme-professional:text-base theme-pixel:text-xs font-medium"
+                            style="color: var(--secondary);"
                         >
+                            Bakery Management Platform
+                        </span>
                     </div>
                 </div>
             </article>
-            <!-- Optional: Call to action for more projects coming -->
+
+            <!-- Call to action -->
             <div class="mt-16 text-center">
                 <p
                     class="theme-professional:text-base theme-pixel:text-xs"
