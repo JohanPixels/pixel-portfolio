@@ -1,14 +1,17 @@
 ---
+import { Briefcase, Rocket, GraduationCap, Calendar, MapPin, Trophy, CheckCircle } from '@lucide/astro';
+
 // Experience - English (DATES CORRECTED)
 const experiences = [
   {
     role: "Software Developer",
-    company: "Sucro",
-    period: "May 2024 - November 2024 · 7 months",
-    location: "Colombia",
+    company: "Sucroal",
+    period: "May 2025 - November 2025 · 7 months",
+    location: "Palmira, Valle del Cauca - Colombia",
+    technologies: ["Python", "SQL Server", "SAP", "pandas"],
     description: "Developed automated ETL processes from SAP to SQL Server. Database query optimization and data pipeline development.",
     achievements: [
-      "Built ETL system designed to reduce 4 hours to 12 minutes of extraction time",
+      "Built ETL system designed to reduce 10+ hours to 1 hour of extraction time monthly",
       "Implemented automatic data validation",
       "Delivered production-ready code with comprehensive documentation"
     ],
@@ -20,23 +23,25 @@ const experiences = [
     period: "2022 - Present",
     location: "Remote",
     description: "Web and mobile application development. Business process automation.",
+    technologies: ["React", "Node.js", "Flutter", "Firebase", "PostgreSQL"],
     achievements: [
-      "Fast Training - Sports training mobile app",
-      "Bakery management system for family business",
-      "Multiple Python automation scripts"
+      "Fast Training - Mobile app for sports training management (Flutter, Firebase)",
+      "Bakery management system for family business (React, Node.js, SQL)",
+      "Python automation scripts for data processing"
     ],
     type: "freelance"
   },
   {
     role: "Software Development Technology Program",
     company: "SENA",
-    period: "2021 - 2023",
-    location: "Colombia",
+    period: "2023 - 2025",
+    location: "Popayán, Cauca - Colombia",
     description: "Analysis and Software Development. Comprehensive technical training in full-stack development.",
+    technologies: ["React", "Python", "SQL", "MongoDB", "Next.js", "Javascript", "Flutter"],
     achievements: [
       "Web development certification",
       "Practical projects in React and Python",
-      "SENASoft 2025 participant"
+      "Competed in programming challenges and technical competitions"
     ],
     type: "education"
   },
@@ -44,7 +49,8 @@ const experiences = [
     role: "Web Development Certification",
     company: "Universidad de Caldas",
     period: "2022 · 800 hours",
-    location: "Colombia",
+    location: "Remote",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     description: "Intensive program focused on web application development as part of Colombia's MinTIC digital transformation initiative.",
     achievements: [
       "Web development fundamentals and architecture",
@@ -54,6 +60,31 @@ const experiences = [
     type: "education"
   }
 ];
+
+// Helper para obtener iconos de tecnologías
+const getTechIcon = (tech) => {
+  const icons = {
+    'Python': 'simple-icons:python',
+    'SQL Server': 'simple-icons:microsoftsqlserver',
+    'SAP': 'simple-icons:sap',
+    'pandas': 'simple-icons:pandas',
+    'React': 'simple-icons:react',
+    'Node.js': 'simple-icons:nodedotjs',
+    'Flutter': 'simple-icons:flutter',
+    'Firebase': 'simple-icons:firebase',
+    'PostgreSQL': 'simple-icons:postgresql',
+    'MongoDB': 'simple-icons:mongodb',
+    'Next.js': 'simple-icons:nextdotjs',
+    'Javascript': 'simple-icons:javascript',
+    'SQL': 'simple-icons:mysql',
+    'HTML': 'simple-icons:html5',
+    'CSS': 'simple-icons:css3',
+    'JavaScript': 'simple-icons:javascript',
+    'PHP': 'simple-icons:php',
+    'MySQL': 'simple-icons:mysql'
+  };
+  return icons[tech] || 'mdi:code-tags';
+};
 ---
 
 <section id="experience" class="py-24 px-6" style="background-color: var(--surface);">
@@ -71,18 +102,28 @@ const experiences = [
 
     <!-- Timeline -->
     <div class="relative">
-      <!-- Vertical line -->
+      <!-- Vertical line - Centrada en left-8 -->
       <div class="absolute left-8 top-0 bottom-0 w-0.5" style="background-color: var(--border);"></div>
 
       <!-- Experience items -->
       <div class="space-y-12">
         {experiences.map((exp) => (
           <article class="relative pl-20">
-            <!-- Timeline dot -->
+            <!-- Timeline dot - Centrado en la línea (left-3 para que el centro del dot de 10 esté en left-8) -->
             <div
-              class="absolute left-5 top-2 w-6 h-6 rounded-full border-4 z-10"
+              class="absolute left-3 top-2 w-10 h-10 rounded-full border-4 z-10 flex items-center justify-center"
               style={`background-color: var(--bg); border-color: ${exp.type === 'work' ? 'var(--accent)' : exp.type === 'freelance' ? '#10b981' : '#f59e0b'};`}
-            ></div>
+            >
+              {exp.type === 'work' && (
+                <Briefcase size={20} style={`color: var(--accent);`} />
+              )}
+              {exp.type === 'freelance' && (
+                <Rocket size={20} style="color: #10b981;" />
+              )}
+              {exp.type === 'education' && (
+                <GraduationCap size={20} style="color: #f59e0b;" />
+              )}
+            </div>
 
             <!-- Content card -->
             <div class="p-6 rounded-lg border-2 hover:scale-105 transition-all" style="background-color: var(--bg); border-color: var(--border);">
@@ -92,17 +133,30 @@ const experiences = [
                   <h3 class="theme-professional:text-2xl theme-pixel:text-lg font-bold">
                     {exp.role}
                   </h3>
+
+                  <!-- Tag con iconos en lugar de emojis -->
                   <span
-                    class="px-3 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px] font-medium"
+                    class="px-3 py-1 rounded-full theme-professional:text-xs theme-pixel:text-[10px] font-medium flex items-center gap-1.5"
                     style={`background-color: ${exp.type === 'work' ? 'var(--accent)' : exp.type === 'freelance' ? '#10b981' : '#f59e0b'}; color: var(--bg);`}
                   >
-                    {exp.type === 'work' ? '💼 Work' : exp.type === 'freelance' ? '🚀 Freelance' : '🎓 Education'}
+                    {exp.type === 'work' && <Briefcase size={14} />}
+                    {exp.type === 'freelance' && <Rocket size={14} />}
+                    {exp.type === 'education' && <GraduationCap size={14} />}
+                    {exp.type === 'work' ? 'Work' : exp.type === 'freelance' ? 'Freelance' : 'Education'}
                   </span>
                 </div>
+
+                <!-- Metadata con iconos Lucide -->
                 <div class="flex flex-wrap gap-4 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--secondary);">
                   <span class="font-medium" style="color: var(--accent);">{exp.company}</span>
-                  <span>📅 {exp.period}</span>
-                  <span>📍 {exp.location}</span>
+                  <span class="flex items-center gap-1">
+                    <Calendar size={16} />
+                    {exp.period}
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <MapPin size={16} />
+                    {exp.location}
+                  </span>
                 </div>
               </div>
 
@@ -111,20 +165,34 @@ const experiences = [
                 {exp.description}
               </p>
 
-              <!-- Achievements -->
+              <!-- Achievements con icono Lucide -->
               <div>
-                <h4 class="theme-professional:text-sm theme-pixel:text-xs font-bold mb-2" style="color: var(--accent);">
+                <h4 class="theme-professional:text-sm theme-pixel:text-xs font-bold mb-2 flex items-center gap-2" style="color: var(--accent);">
+                  <Trophy size={16} />
                   Key Achievements:
                 </h4>
                 <ul class="space-y-1 theme-professional:text-sm theme-pixel:text-xs" style="color: var(--text);">
                   {exp.achievements.map((achievement) => (
-                    <li class="flex items-start">
-                      <span class="mr-2" style="color: var(--accent);">▸</span>
+                    <li class="flex items-start gap-2">
+                      <CheckCircle size={16} style="color: var(--accent); margin-top: 2px; flex-shrink: 0;" />
                       <span>{achievement}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+
+              <!-- Technologies con iconos simple-icons -->
+              {exp.technologies && (
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span class="px-2 py-1 rounded theme-professional:text-xs theme-pixel:text-[10px] flex items-center gap-1.5"
+                          style="background-color: var(--surface); color: var(--accent); border: 1px solid var(--border);">
+                      <iconify-icon icon={getTechIcon(tech)} width="14" height="14"></iconify-icon>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </article>
         ))}
