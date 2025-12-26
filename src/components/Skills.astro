@@ -1,11 +1,6 @@
----
-// Skills & Tools - English
----
-
-<section id="skills" class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-        <!-- Section Header -->
-        <div class="mb-16 text-center">
+<section id="skills" class="py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-8 text-center">
             <h2
                 class="theme-professional:text-5xl theme-pixel:text-3xl font-bold mb-4"
             >
@@ -24,229 +19,402 @@
             </div>
         </div>
 
-        <!-- Bento Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Frontend - Large box -->
+        <div
+            class="grid grid-cols-1 lg:grid-cols-[180px_1fr_180px] gap-6 items-start"
+        >
+            <!-- Decoración Izquierda -->
+            <!-- <aside class="hidden lg:block sticky top-24">
+                <div class="text-6xl animate-bounce">🚀</div>
+            </aside> -->
+
+            <!-- Bento Grid -->
             <div
-                class="col-span-2 md:row-span-2 p-8 rounded-lg border-2 hover:scale-105 transition-all"
-                style="background-color: var(--surface); border-color: var(--border);"
+                class="grid col-start-2 grid-cols-4 grid-rows-[auto_auto_1fr_1fr_auto_auto] gap-2"
             >
-                <h3
-                    class="theme-professional:text-2xl theme-pixel:text-lg font-bold mb-4"
-                    style="color: var(--accent);"
+                <!-- Frontend -->
+                <div
+                    class="col-start-1 row-start-1 col-span-2 row-span-2 p-4 rounded-lg border-2 hover:scale-105 transition-all"
+                    style="background-color: var(--surface); border-color: var(--border);"
                 >
-                    Frontend
-                </h3>
-                <div class="space-y-3">
-                    <div>
+                    <h3
+                        class="theme-professional:text-2xl theme-pixel:text-lg font-bold mb-4"
+                        style="color: var(--accent);"
+                    >
+                        Frontend
+                    </h3>
+                    <div class="space-y-3">
                         <div
-                            class="flex justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
+                            class="flex items-center justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
                         >
-                            <span>React + Next.js</span>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:react"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>React + Next.js</span>
+                            </div>
                             <span style="color: var(--accent);">●●●●●</span>
                         </div>
-                    </div>
-                    <div>
                         <div
-                            class="flex justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
+                            class="flex items-center justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
                         >
-                            <span>Astro</span>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:astro"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Astro</span>
+                            </div>
                             <span style="color: var(--accent);">●●●●○</span>
                         </div>
-                    </div>
-                    <div>
                         <div
-                            class="flex justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
+                            class="flex items-center justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
                         >
-                            <span>Tailwind CSS</span>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:tailwindcss"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Tailwind CSS</span>
+                            </div>
                             <span style="color: var(--accent);">●●●●●</span>
                         </div>
-                    </div>
-                    <div>
                         <div
-                            class="flex justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
+                            class="flex items-center justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
                         >
-                            <span>TypeScript</span>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:typescript"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>TypeScript</span>
+                            </div>
                             <span style="color: var(--accent);">●●●●○</span>
                         </div>
-                    </div>
-                    <div>
                         <div
-                            class="flex justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
+                            class="flex items-center justify-between mb-1 theme-professional:text-sm theme-pixel:text-xs"
                         >
-                            <span>Flutter</span>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:flutter"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Flutter</span>
+                            </div>
                             <span style="color: var(--accent);">●●●○○</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Backend - Medium box -->
-            <div
-                class="col-span-2 p-6 rounded-lg border-2 hover:scale-105 transition-all"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <h3
-                    class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
-                    style="color: var(--accent);"
-                >
-                    Backend
-                </h3>
+                <!-- Backend -->
                 <div
-                    class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
+                    class="h-auto col-start-1 row-start-3 col-span-2 row-span-2 p-4 rounded-lg border-2 hover:scale-105 transition-all"
+                    style="background-color: var(--surface); border-color: var(--border);"
                 >
-                    <div class="flex justify-between">
-                        <span>Python</span>
-                        <span style="color: var(--accent);">●●●●●</span>
+                    <h3
+                        class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
+                        style="color: var(--accent);"
+                    >
+                        Backend
+                    </h3>
+                    <div
+                        class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:python"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Python</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●●</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:nodedotjs"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Node.js</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●○</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="mdi:api"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>REST APIs</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●●</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between">
-                        <span>Node.js</span>
-                        <span style="color: var(--accent);">●●●●○</span>
+                </div>
+
+                <!-- Databases -->
+                <div
+                    class="h-auto col-start-3 row-start-3 col-span-2 row-span-2 p-4 rounded-lg border-2 hover:scale-105 transition-all"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <h3
+                        class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
+                        style="color: var(--accent);"
+                    >
+                        Databases
+                    </h3>
+                    <div
+                        class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:microsoftsqlserver"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>SQL Server</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●●</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:postgresql"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●○</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:mongodb"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>MongoDB</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●○○</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between">
-                        <span>REST APIs</span>
-                        <span style="color: var(--accent);">●●●●●</span>
+                </div>
+
+                <!-- Git -->
+                <div
+                    class="col-start-3 row-start-1 col-span-1 row-span-1 p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <iconify-icon
+                        icon="simple-icons:git"
+                        width="48"
+                        height="48"
+                        class="mb-2"
+                        style="color: var(--accent);"></iconify-icon>
+                    <span
+                        class="theme-professional:text-sm theme-pixel:text-xs font-bold"
+                        >Git</span
+                    >
+                    <span
+                        class="theme-professional:text-xs theme-pixel:text-[10px]"
+                        style="color: var(--accent);">●●●●●</span
+                    >
+                </div>
+
+                <!-- Linux -->
+                <div
+                    class="col-start-4 row-start-1 col-span-1 row-span-1 p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <iconify-icon
+                        icon="simple-icons:linux"
+                        width="48"
+                        height="48"
+                        class="mb-2"
+                        style="color: var(--accent);"></iconify-icon>
+                    <span
+                        class="theme-professional:text-sm theme-pixel:text-xs font-bold"
+                        >Linux</span
+                    >
+                    <span
+                        class="theme-professional:text-xs theme-pixel:text-[10px]"
+                        style="color: var(--accent);">●●●●○</span
+                    >
+                </div>
+
+                <!-- Docker -->
+                <div
+                    class="col-start-3 row-start-2 col-span-1 row-span-1 p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <iconify-icon
+                        icon="simple-icons:docker"
+                        width="48"
+                        height="48"
+                        class="mb-2"
+                        style="color: var(--accent);"></iconify-icon>
+                    <span
+                        class="theme-professional:text-sm theme-pixel:text-xs font-bold"
+                        >Docker</span
+                    >
+                    <span
+                        class="theme-professional:text-xs theme-pixel:text-[10px]"
+                        style="color: var(--accent);">●●●○○</span
+                    >
+                </div>
+
+                <!-- Pandas -->
+                <div
+                    class="col-start-4 row-start-2 col-span-1 row-span-1 p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <iconify-icon
+                        icon="simple-icons:pandas"
+                        width="48"
+                        height="48"
+                        class="mb-2"
+                        style="color: var(--accent);"></iconify-icon>
+                    <span
+                        class="theme-professional:text-sm theme-pixel:text-xs font-bold"
+                        >Pandas</span
+                    >
+                    <span
+                        class="theme-professional:text-xs theme-pixel:text-[10px]"
+                        style="color: var(--accent);">●●●●○</span
+                    >
+                </div>
+
+                <!-- Data & Automation -->
+                <div
+                    class="h-auto col-start-1 row-start-5 col-span-4 row-span-2 p-4 rounded-lg border-2 hover:scale-105 transition-all"
+                    style="background-color: var(--surface); border-color: var(--border);"
+                >
+                    <h3
+                        class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
+                        style="color: var(--accent);"
+                    >
+                        Data & Automation
+                    </h3>
+                    <div
+                        class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="mdi:database-sync"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>ETL Processes</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●●</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:sap"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>SAP Integration</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●○</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="simple-icons:python"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Python Scripts</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●●</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon
+                                    icon="mdi:chart-line"
+                                    width="20"
+                                    height="20"
+                                    style="color: var(--accent);"
+                                ></iconify-icon>
+                                <span>Data Analysis</span>
+                            </div>
+                            <span style="color: var(--accent);">●●●●○</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Databases - Medium box -->
-            <div
-                class="col-span-2 p-6 rounded-lg border-2 hover:scale-105 transition-all"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <h3
-                    class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
-                    style="color: var(--accent);"
-                >
-                    Databases
-                </h3>
+            <!-- Decoración Derecha -->
+            <!-- <aside class="hidden lg:block sticky top-24">
                 <div
-                    class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
+                    class="p-6 rounded-lg border-2 h-fit"
+                    style="background-color: var(--surface); border-color: var(--border);"
                 >
-                    <div class="flex justify-between">
-                        <span>SQL Server</span>
-                        <span style="color: var(--accent);">●●●●●</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>PostgreSQL</span>
-                        <span style="color: var(--accent);">●●●●○</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>MongoDB</span>
-                        <span style="color: var(--accent);">●●●○○</span>
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="text-6xl animate-pulse">⚡</div>
+                        <div
+                            class="text-sm text-center font-mono"
+                            style="color: var(--secondary);"
+                        >
+                            &gt; Building...<br />
+                            <span class="animate-pulse">_</span>
+                        </div>
+                        <div class="w-full text-xs space-y-1">
+                            <div class="flex justify-between">
+                                <span>Code</span>
+                                <span style="color: var(--accent);">●●●●●</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Design</span>
+                                <span style="color: var(--accent);">●●●●○</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- DevOps & Tools - Small boxes -->
-            <div
-                class="p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <span class="text-3xl mb-2">🐙</span>
-                <span
-                    class="theme-professional:text-sm theme-pixel:text-xs font-bold"
-                    >Git</span
-                >
-                <span
-                    class="theme-professional:text-xs theme-pixel:text-[10px]"
-                    style="color: var(--accent);">●●●●●</span
-                >
-            </div>
-
-            <div
-                class="p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <span class="text-3xl mb-2">🐧</span>
-                <span
-                    class="theme-professional:text-sm theme-pixel:text-xs font-bold"
-                    >Linux</span
-                >
-                <span
-                    class="theme-professional:text-xs theme-pixel:text-[10px]"
-                    style="color: var(--accent);">●●●●○</span
-                >
-            </div>
-
-            <div
-                class="p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <span class="text-3xl mb-2">🐳</span>
-                <span
-                    class="theme-professional:text-sm theme-pixel:text-xs font-bold"
-                    >Docker</span
-                >
-                <span
-                    class="theme-professional:text-xs theme-pixel:text-[10px]"
-                    style="color: var(--accent);">●●●○○</span
-                >
-            </div>
-
-            <div
-                class="p-4 rounded-lg border-2 hover:scale-105 transition-all flex flex-col justify-center items-center text-center"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <span class="text-3xl mb-2">📊</span>
-                <span
-                    class="theme-professional:text-sm theme-pixel:text-xs font-bold"
-                    >Pandas</span
-                >
-                <span
-                    class="theme-professional:text-xs theme-pixel:text-[10px]"
-                    style="color: var(--accent);">●●●●○</span
-                >
-            </div>
-
-            <!-- Data & Automation - Large box -->
-            <div
-                class="col-span-2 p-6 rounded-lg border-2 hover:scale-105 transition-all"
-                style="background-color: var(--surface); border-color: var(--border);"
-            >
-                <h3
-                    class="theme-professional:text-xl theme-pixel:text-base font-bold mb-4"
-                    style="color: var(--accent);"
-                >
-                    Data & Automation
-                </h3>
-                <div
-                    class="space-y-2 theme-professional:text-sm theme-pixel:text-xs"
-                >
-                    <div class="flex justify-between">
-                        <span>ETL Processes</span>
-                        <span style="color: var(--accent);">●●●●●</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>SAP Integration</span>
-                        <span style="color: var(--accent);">●●●●○</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Python Scripts</span>
-                        <span style="color: var(--accent);">●●●●●</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Data Analysis</span>
-                        <span style="color: var(--accent);">●●●●○</span>
-                    </div>
-                </div>
-            </div>
+            </aside> -->
         </div>
 
         <!-- Learning -->
         <div
-            class="mt-12 p-6 rounded-lg border-2 text-center"
+            class="mt-12 p-6 rounded-lg border-2 text-center w-fit mx-auto"
             style="background-color: var(--surface); border-color: var(--accent);"
         >
             <p
                 class="theme-professional:text-base theme-pixel:text-xs"
                 style="color: var(--secondary);"
             >
-                🌱 Currently learning: <span
-                    style="color: var(--accent); font-weight: 600;"
-                    >Machine Learning, AI Integration, Cloud Architecture</span
-                >
+                🌱 Currently learning:
+                <span style="color: var(--accent); font-weight: 600;">
+                    Machine Learning - AI Integration
+                </span>
             </p>
         </div>
     </div>
